@@ -4,22 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Katik Persegi</title>
+    <title>Katik</title>
 </head>
 <body>
     <header>
-        <h1>Kalkulator Luas dan Keliling Persegi</h1>
-        <h4>Welcome to kalkulator Luas dan Keliling Persegi</h4>
-        <p>Web ini digunakan untuk menghitung Luas dan Keliling Persegi dalam rangka menyelesaikan mini project Revou</p>
+        <h1><span class="largeText">Katik </span><span class="smallText">Kalkulator Matematik</span></h1>
+        <h4>Welcome to kalkulator Luas dan Keliling Persegi dan Persegi Panjang</h4>
+        <p>Web ini digunakan untuk kalkulator dan menghitung Luas dan Keliling Persegi dan Persegi Panjang dalam rangka menyelesaikan mini project Revou</p>
     </header>
+    <!-- Kalkulator -->
+    <div class="grid-container">
+        <input type="text" id="display" readonly>
+        <button class="red" onclick="clearDisplay()">AC</button>
+        <button class="blue" onclick="clearLast()">C</button>
+        <button class="orange" onclick="appendToDisplay('*')">*</button>
+        <button onclick="appendToDisplay('7')">7</button>
+        <button onclick="appendToDisplay('8')">8</button>
+        <button onclick="appendToDisplay('9')">9</button>
+        <button class="orange" onclick="appendToDisplay('/')">/</button>
+        <button onclick="appendToDisplay('4')">4</button>
+        <button onclick="appendToDisplay('5')">5</button>
+        <button onclick="appendToDisplay('6')">6</button>
+        <button class="orange" onclick="appendToDisplay('+')">+</button>
+        <button onclick="appendToDisplay('1')">1</button>
+        <button onclick="appendToDisplay('2')">2</button>
+        <button onclick="appendToDisplay('3')">3</button>
+        <button class="orange" onclick="appendToDisplay('-')">-</button>
+        <button class="black" onclick="calculateSquareRoot()">√</button>
+        <button onclick="appendToDisplay('0')">0</button>
+        <button class="black" onclick="appendToDisplay('.')">.</button>
+        <button class="green" onclick="calculateResult()">=</button>
+    </div>
+    <!-- Luas dan Keliling Persegi dan Persegi Panjang-->
+    <div class="calculator">
+        <h2>Kalkulator Luas dan Keliling</h2>
+        <h3>Persegi dan Persegi Panjang</h3>
+        <form id="calculatorForm">
+            <div class="formula-box">
+                <p>Rumus Luas Persegi: sisi x sisi</p>
+                <p>Rumus Keliling Persegi: 4 x sisi</p>
+                <p>Rumus Luas Persegi Panjang: panjang x lebar</p>
+                <p>Rumus Keliling Persegi Panjang: 2 x (panjang + lebar)</p>
+            </div>
 
-    <div class="inputSection">
-        <label for="squareSide" id="lblSquareSide">Hitung Luas Persegi</label>
-        <input type="number" id="squareSide">
+            <label for="length">Sisi atau Panjang:</label>
+            <input type="number" id="length" required>
+            
+            <label for="width">Sisi atau Lebar:</label>
+            <input type="number" id="width" required>
+            
+            <button2 type="button" onclick="calculate()">Hitung</button2>
+            <button2 type="button" class="reset-button" onclick="resetForm()">Reset</button2>
+            
+            <label for="result">Hasil:</label>
+            <input type="text" id="result" readonly>
+        </form>
     </div>
-    <div class="buttons">
-        <button id="countButton">Hitung</button>
-        <button id="resetButton">Reset</button>
-    </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
